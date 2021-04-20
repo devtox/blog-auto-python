@@ -4,8 +4,5 @@ title: The Blog
 permalink: /blog
 section: blog
 intro_paragraph: >
-  This is the Blog index page, listing each post with an
-  automatically generated post excerpt. It's a normal Jekyll page but uses
-  the `_layouts/blog.html` template to output the blog's posts after the page
-  content.
+  Artcles on evertying Python. This site is a blog about the Python programming language, written by a developer, of course. The posts should be readable as Python source code
 ---
