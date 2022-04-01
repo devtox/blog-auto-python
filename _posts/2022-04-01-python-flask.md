@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Python Flask
+title: Flask
+meta_description: Python Flask introduction, make web apps with Python
 author: john_doe
-date: 2022-04-01 22:02:18
+date: 2021-03-01 22:52:00
 intro_paragraph: >-
   Python Flask is a Python package for developing web applications with. It
   features a built-in development server and a unit test integration. Python
