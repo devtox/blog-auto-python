@@ -230,6 +230,7 @@ if __name__ == '__main__':
 
 Then the template can simply output the variable name
 
+{% raw %}
 ```html
 <!doctype html>
 <html>
@@ -238,6 +239,7 @@ Then the template can simply output the variable name
    </body>
 </html>
 ```
+{% endraw %}
 
 The function hello() return the *template* `hello.html`. It uses the variable marks inside the template. The url to be used is a dynamic url, `/hello/<score>`.
 
