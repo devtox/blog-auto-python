@@ -255,6 +255,7 @@ if __name__ == '__main__':
 
 The template can then look like this:
 
+{% raw %}
 ```python
 <!doctype html>
 <html>
@@ -267,6 +268,8 @@ The template can then look like this:
    </body>
 </html>
 ```
+{% endraw %}
+
 
 The template contains an if statement, the output depends on the variable passed in the url. The variable gets passed from the url, to the function and then to the template.
 
