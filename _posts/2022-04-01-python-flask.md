@@ -22,7 +22,6 @@ The goal of the project is to empower developers with a simple but flexible stru
 * Form Validation
 * Extensions  
 
-
 <br />
 
 ### Flask web app
@@ -115,9 +114,10 @@ def hello():
 if __name__ == "__main__":
     app.run()
 ```
+
 <br />
 
-### Test if our web server works 
+### Test if our web server works
 
 Now run the program with the command
 
@@ -143,7 +143,6 @@ $ python3 hello.py
 
 You can then open *http://127.0.0.1:5000* and you should see the output. Besides text output, you can return html output in the function.
 
-
 ### Routing
 
  A route is a url, and we will use the url to run the correct function to handle it.
@@ -151,7 +150,6 @@ You can then open *http://127.0.0.1:5000* and you should see the output. Besides
 It is one of the key concepts in Flask. In layman’s terms, a route is just a URL pattern that gets handled by a view function. Pretty simple stuff.
 
 You can use Flask to create simple HTTP routes to your application. By defining routes, you can use the same URLs for different actions. 
-
 
 You have user a route before, namely the index route. When you open the index page in your web browser, it calls the hello function and returns the function data.
 
@@ -172,6 +170,7 @@ If you have want a page to show photos, you could have a route
 ```python
 @app.route("/photos")
 ```
+
 <br />
 This lets you call /photos in your web browser. But you need to map it to a function that returns data. Something like this:
 
@@ -197,6 +196,7 @@ Flask can handle this too. By using the code below, you create a dynamic route w
 def show_employee(name):
     return f'Hello {name} !'
 ```
+
 <br />
 You can also do dynamic numbers in routing.
 
@@ -255,7 +255,7 @@ if __name__ == '__main__':
 
 The template can then look like this:
 
-```html
+```python
 <!doctype html>
 <html>
    <body>
@@ -271,6 +271,6 @@ The template can then look like this:
 The template contains an if statement, the output depends on the variable passed in the url. The variable gets passed from the url, to the function and then to the template.
 
 Besides showing variables directly and if statements, you can also use for loops. So that sums up the template language.
+
+There's a lot more to Python Flask, but these are the absolute basics.
 <br />
-
-
