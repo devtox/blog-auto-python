@@ -20,10 +20,11 @@ The goal of the project is to empower developers with a simple but flexible stru
 * Configurations
 * OAuth 1.0a
 * Form Validation
-* Extensions
+* Extensions  
 
 
-\
+<br />
+
 ### Flask web app
 
 We will use Python Flask to create a very simple web application.
