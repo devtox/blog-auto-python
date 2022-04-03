@@ -116,7 +116,6 @@ def hello():
 if __name__ == "__main__":
     app.run()
 ```
-
 <br />
 
 ### Test if our web server works
@@ -188,7 +187,6 @@ In Flask, this identification process comes in two ways: URL Routing and View Te
 <br />
 
 ![routing in the real world](/assets/img/uploads/flask-route.png "Flask routing")
-
 <br />
 
 ### Dynamic routes
