@@ -22,6 +22,9 @@ The goal of the project is to empower developers with a simple but flexible stru
 * Form Validation
 * Extensions
 
+
+\
+
 ### Flask web app
 
 We will use Python Flask to create a very simple web application.
@@ -35,7 +38,9 @@ We will perform the following tasks:
 3. Install Flask in the project
 4. Create a new Python file inside our project directory.
 5. Write the first lines of code in our Python file to create a web server.
-6. Test if our web server works correctly by visiting it through our browser.
+6. Test if our web server works correctly by visiting it through our browser. 
+
+
 
 **Install Python and pip**
 
@@ -124,3 +129,4 @@ $ python3 hello.py
 ```
 
 You can then open *http://127.0.0.1:5000* and you should see the output. Besides text output, you can return html output in the function.
+
