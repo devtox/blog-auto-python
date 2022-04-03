@@ -69,6 +69,8 @@ Then you need to activate your project environment
 > venv\Scripts\activate        # For Windows users
 ```
 
+![Create new Python Flask project ](/assets/img/uploads/flask-venv.png "Python Flask project")
+
 <br />
 
 **Install Flask**
@@ -184,8 +186,6 @@ So in order to know how to handle each request, Flask needs a way to identify wh
 
 In Flask, this identification process comes in two ways: URL Routing and View Templates. The combination of these two features creates an interaction between user and server that leads to something called Flask-HTML-Response. 
 <br />
-
-
 
 ![routing in the real world](/assets/img/uploads/flask-route.png "Flask routing")
 
