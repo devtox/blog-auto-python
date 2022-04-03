@@ -24,7 +24,6 @@ The goal of the project is to empower developers with a simple but flexible stru
 
 
 \
-
 ### Flask web app
 
 We will use Python Flask to create a very simple web application.
@@ -39,8 +38,6 @@ We will perform the following tasks:
 4. Create a new Python file inside our project directory.
 5. Write the first lines of code in our Python file to create a web server.
 6. Test if our web server works correctly by visiting it through our browser. 
-
-
 
 **Install Python and pip**
 
@@ -86,6 +83,7 @@ mkdir src
 cd src
 touch hello.py
 ```
+
 **Create the program for the web server**
 
 The file hello.py can contain the code below
@@ -105,7 +103,6 @@ def hello():
 # the start of the application
 if __name__ == "__main__":
     app.run()
-
 ```
 
 6. Test if our web server works correctly by visiting it through our browser.
@@ -129,4 +126,3 @@ $ python3 hello.py
 ```
 
 You can then open *http://127.0.0.1:5000* and you should see the output. Besides text output, you can return html output in the function.
-
