@@ -140,4 +140,65 @@ $ python3 hello.py
  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
 ```
 
+<br />
+
 You can then open *http://127.0.0.1:5000* and you should see the output. Besides text output, you can return html output in the function.
+
+
+### Routing
+
+ A route is a url, and we will use the url to run the correct function to handle it.
+
+You can use Flask to create simple HTTP routes to your application. By defining routes, you can use the same URLs for different actions. 
+
+
+You have user a route before, namely the index route. When you open the index page in your web browser, it calls the hello function and returns the function data.
+
+Every page in your website will pass through the Request-Response model. If you are confused, don’t worry, there is a simple way to do so.
+
+```python
+@app.route("/")
+def hello():
+    return "Hello, World!"
+```
+
+That's all it takes to create the index route. If you open the webpage in your web browser, you will see the text returned. 
+
+This can be useful to keep things consistent and is a common pattern in several web frameworks.
+
+If you have want a page to show photos, you could have a route
+
+```python
+@app.route("/photos")
+```
+
+This lets you call /photos in your web browser. But you need to map it to a function that returns data. Something like this:
+
+```python
+@app.route("/photos")
+def photos():
+    return "My photos!"
+```
+
+So, we have covered the basics of how to define and name routes, which is great for applications with a small, fixed set of routes. But what about applications that are more dynamic and may have many different routes?
+
+Flask can handle this too. By using the code below, you create a dynamic route where the last parameter can hold any value.
+
+```python
+@app.route('/company/<employee>')
+def show_employee(name):
+    return f'Hello {name} !'
+```
+
+You can also do dynamic numbers in routing.
+
+````python
+@app.route('/product/<int:id>')
+def show_product(id):
+    return f'Product id {id}'
+```
+
+<br />
+
+
+
