@@ -115,7 +115,6 @@ def hello():
 if __name__ == "__main__":
     app.run()
 ```
-
 <br />
 
 ### Test if our web server works 
@@ -148,6 +147,8 @@ You can then open *http://127.0.0.1:5000* and you should see the output. Besides
 ### Routing
 
  A route is a url, and we will use the url to run the correct function to handle it.
+
+It is one of the key concepts in Flask. In layman’s terms, a route is just a URL pattern that gets handled by a view function. Pretty simple stuff.
 
 You can use Flask to create simple HTTP routes to your application. By defining routes, you can use the same URLs for different actions. 
 
@@ -183,7 +184,6 @@ def photos():
 So in order to know how to handle each request, Flask needs a way to identify what the user wants. In programming terms, this is called identification. (Identification is the process of determining characteristics of something.) 
 
 In Flask, this identification process comes in two ways: URL Routing and View Templates. The combination of these two features creates an interaction between user and server that leads to something called Flask-HTML-Response. 
-
 <br />
 
 ### Dynamic routes
