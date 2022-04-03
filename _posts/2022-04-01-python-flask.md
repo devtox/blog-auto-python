@@ -197,10 +197,10 @@ Flask can handle this too. By using the code below, you create a dynamic route w
 def show_employee(name):
     return f'Hello {name} !'
 ```
-
+<br />
 You can also do dynamic numbers in routing.
 
-````python
+```python
 @app.route('/product/<int:id>')
 def show_product(id):
     return f'Product id {id}'
@@ -208,5 +208,86 @@ def show_product(id):
 
 <br />
 
+### Templates
+
+A template is a web page with variables and expressions. The web page itself can be defined in html but with Flask, it uses an additional template language called Jinja2.
+
+A function can return a template. The variables passed by the function are then automatically shown in the web page.
+
+A simple example is show below
+
+```python
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/hello/')
+def hello(user):
+   return render_template('hello.html', name = 'alice')
+
+if __name__ == '__main__':
+   app.run(debug = True)
+```
+
+Then the template can simply output the variable name
+
+```html
+<!doctype html>
+<html>
+   <body>
+         <h1>Hello {{ name }}!</h1>
+   </body>
+</html>
+```
+
+The function hello() return the *template* `hello.html`. It uses the variable marks inside the template. The url to be used is a dynamic url, `/hello/<score>`.
+
+```python
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/hello/<int:score>')
+def hello(score):
+   return render_template('hello.html', mark = score)
+
+if __name__ == '__main__':
+   app.run(debug = True)
+```
+
+The template can then look like this:
+
+```html
+<!doctype html>
+<html>
+   <body>
+      {% if mark>60 %}
+         <h1> You passed the exam!</h1>
+      {% else %}
+         <h1>You fail the exam</h1>
+      {% endif %}
+   </body>
+</html>
+```
+
+The template contains an if statement, the output depends on the variable passed in the url. The variable gets passed from the url, to the function and then to the template.
+
+Besides showing variables directly and if statements, you can also use for loops. You then need to pass a dictionary as variable. Inside the template you can access it:
+
+```html
+<!doctype html>
+<html>
+   <body>
+      <table>
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
+```
+
+<br />
 
 
