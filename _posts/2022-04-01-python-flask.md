@@ -171,7 +171,7 @@ If you have want a page to show photos, you could have a route
 ```python
 @app.route("/photos")
 ```
-
+<br />
 This lets you call /photos in your web browser. But you need to map it to a function that returns data. Something like this:
 
 ```python
@@ -179,6 +179,14 @@ This lets you call /photos in your web browser. But you need to map it to a func
 def photos():
     return "My photos!"
 ```
+
+So in order to know how to handle each request, Flask needs a way to identify what the user wants. In programming terms, this is called identification. (Identification is the process of determining characteristics of something.) 
+
+In Flask, this identification process comes in two ways: URL Routing and View Templates. The combination of these two features creates an interaction between user and server that leads to something called Flask-HTML-Response. 
+
+<br />
+
+### Dynamic routes
 
 So, we have covered the basics of how to define and name routes, which is great for applications with a small, fixed set of routes. But what about applications that are more dynamic and may have many different routes?
 
