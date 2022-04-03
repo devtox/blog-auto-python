@@ -270,24 +270,7 @@ The template can then look like this:
 
 The template contains an if statement, the output depends on the variable passed in the url. The variable gets passed from the url, to the function and then to the template.
 
-Besides showing variables directly and if statements, you can also use for loops. You then need to pass a dictionary as variable. Inside the template you can access it:
-
-```html
-<!doctype html>
-<html>
-   <body>
-      <table>
-         {% for key, value in result.items() %}
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
-         {% endfor %}
-      </table>
-   </body>
-</html>
-```
-
+Besides showing variables directly and if statements, you can also use for loops. So that sums up the template language.
 <br />
 
 
