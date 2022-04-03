@@ -185,6 +185,12 @@ So in order to know how to handle each request, Flask needs a way to identify wh
 In Flask, this identification process comes in two ways: URL Routing and View Templates. The combination of these two features creates an interaction between user and server that leads to something called Flask-HTML-Response. 
 <br />
 
+
+
+![routing in the real world](/assets/img/uploads/flask-route.png "Flask routing")
+
+<br />
+
 ### Dynamic routes
 
 So, we have covered the basics of how to define and name routes, which is great for applications with a small, fixed set of routes. But what about applications that are more dynamic and may have many different routes?
@@ -231,6 +237,7 @@ if __name__ == '__main__':
 Then the template can simply output the variable name
 
 {% raw %}
+
 ```html
 <!doctype html>
 <html>
@@ -239,6 +246,7 @@ Then the template can simply output the variable name
    </body>
 </html>
 ```
+
 {% endraw %}
 
 The function hello() return the *template* `hello.html`. It uses the variable marks inside the template. The url to be used is a dynamic url, `/hello/<score>`.
@@ -258,6 +266,7 @@ if __name__ == '__main__':
 The template can then look like this:
 
 {% raw %}
+
 ```python
 <!doctype html>
 <html>
@@ -270,8 +279,8 @@ The template can then look like this:
    </body>
 </html>
 ```
-{% endraw %}
 
+{% endraw %}
 
 The template contains an if statement, the output depends on the variable passed in the url. The variable gets passed from the url, to the function and then to the template.
 
