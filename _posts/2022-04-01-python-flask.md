@@ -40,6 +40,8 @@ We will perform the following tasks:
 5. Write the first lines of code in our Python file to create a web server.
 6. Test if our web server works correctly by visiting it through our browser. 
 
+<br />
+
 **Install Python and pip**
 
 You can install Python and pip using these commands:
@@ -48,6 +50,8 @@ You can install Python and pip using these commands:
 $ sudo apt-get install python3 python-env  # linux
 % brew install python3  # apple mac os
 ```
+
+<br />
 
 **Create new project**
 
@@ -66,6 +70,8 @@ Then you need to activate your project environment
 > venv\Scripts\activate        # For Windows users
 ```
 
+<br />
+
 **Install Flask**
 
 You can install Flask using the pip package manager.
@@ -73,6 +79,8 @@ You can install Flask using the pip package manager.
 ```bash
 pip install -U Flask
 ```
+
+<br />
 
 **Create a Python file inside the src directory**
 
@@ -84,6 +92,8 @@ mkdir src
 cd src
 touch hello.py
 ```
+
+<br />
 
 **Create the program for the web server**
 
@@ -106,13 +116,17 @@ if __name__ == "__main__":
     app.run()
 ```
 
-6. Test if our web server works correctly by visiting it through our browser.
+<br />
+
+### Test if our web server works 
 
 Now run the program with the command
 
 ```bash
 python3 hello.py
 ```
+
+<br />
 
 It should output that it started the web server
 
