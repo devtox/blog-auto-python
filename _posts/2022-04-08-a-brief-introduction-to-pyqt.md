@@ -22,3 +22,45 @@ This workshop will walk you through the basics of how to create and deploy a GUI
 
 We'll cover getting an environment set up, learning about widgets, and what you need to know about events. 
 
+### Installation
+
+```bash
+apt install python3-pyqt5
+```
+
+
+A basic program in PyQt5
+
+```python
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
+ 
+def show_w():
+    # All PyQt5 applications must create an application (Application) object.
+    # The argument is a list of arguments from the command line. (sys.argv)
+     app = QApplication(sys.argv) 
+    
+    # The Qwidget component is the base class for all user interface classes in PyQt5. We give QWidget with a default constructor.
+    w = QWidget() 
+    
+    # The resize() method resizes the widget component. It is now 500px wide and 500px high.
+    w.resize(500, 500) 
+
+    # The move() method moves the widget component to a location that is the x=500,y=200 coordinates on the screen.
+    w.move(500, 100) 
+
+    # Sets the title of the window. This title is displayed in the title bar.
+    w.setWindowTitle('Simple') 
+
+    # show() method displays the widget on the screen. a widget object is created in memory for the first time here and is displayed on the screen afterwards.
+    w.show() 
+ 
+    # The application enters the main loop. At this point, event handling begins to execute. The main loop is used to receive events triggered from the window
+    sys.exit(app.exec_()) 
+  
+    sys.exit()
+ 
+if __name__ == '__main__':
+    show_w()
+```
+
