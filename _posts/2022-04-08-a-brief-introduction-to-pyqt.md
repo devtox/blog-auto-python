@@ -28,7 +28,6 @@ We'll cover getting an environment set up, learning about widgets, and what you 
 apt install python3-pyqt5
 ```
 
-
 A basic program in PyQt5
 
 ```python
@@ -64,3 +63,8 @@ if __name__ == '__main__':
     show_w()
 ```
 
+
+
+Run the program and you should see an empty window like this. The size, position and title are all defined in the code above.
+
+![assets/img/uploads/pyqt-window.png](/assets/img/uploads/pyqt-window.png)
