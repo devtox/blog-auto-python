@@ -63,8 +63,49 @@ if __name__ == '__main__':
     show_w()
 ```
 
-
-
 Run the program and you should see an empty window like this. The size, position and title are all defined in the code above.
 
 ![assets/img/uploads/pyqt-window.png](/assets/img/uploads/pyqt-window.png)
+
+## Button
+
+Example program: button, window closing, tooltip
+
+```python
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip, QDesktopWidget, QMessageBox,QTextEdit,QLabel,
+    QPushButton, QApplication,QMainWindow, QAction, qApp, QHBoxLayout, QVBoxLayout,QGridLayout,
+    QLineEdit)
+from PyQt5.QtGui import QFont,QIcon
+from PyQt5.QtCore import QCoreApplication
+ 
+class PromptText(QWidget):
+ 
+    def __init__(self):
+        super(). __init__()
+        self.initUI()
+ 
+    def initUI(self):
+        QToolTip.setFont(QFont('SansSerif', 10)) 
+        # This static method sets the font used for the prompt box.
+        # Here the SansSerif font of size 10px is used.
+        self.setToolTip('This is a QWidget widget') # Call the setTooltip() method to create the tip box.
+        # You can use rich text formatting in the prompt box.
+        btn = QPushButton('Button', self) # Create button
+        btn.setToolTip('This is a QPushButton widget') # Set the button prompt box
+        btn.resize(btn.sizeHint()) # change the size of the button
+        btn.move(100, 100) # move the position of the button
+        self.setGeometry(300, 100, 300, 300)
+        self.setWindowTitle('Tooltips')
+        self.show()
+ 
+ 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = PromptText()
+    sys.exit(app.exec_())
+```
+
+This program will create a window with a button, on mouseover it will show a little tooltip with the text.
+
+![pyqt button tooltip](/assets/img/uploads/qpushbutton.png)
