@@ -296,3 +296,7 @@ if __name__ == '__main__':
     ex = AbsPosition()
     sys.exit(app.exec_())
 ```
+
+The QLabel widgets are shown below. The text is shown onto the window.
+
+![qlabel python](/assets/img/uploads/pyqt-qlabel.png)
