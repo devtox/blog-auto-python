@@ -109,3 +109,55 @@ if __name__ == '__main__':
 This program will create a window with a button, on mouseover it will show a little tooltip with the text.
 
 ![pyqt button tooltip](/assets/img/uploads/qpushbutton.png)
+
+### Button click
+
+The program below closes if you click on the quit button.
+
+```python
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip, QDesktopWidget, QMessageBox,QTextEdit,QLabel,
+    QPushButton, QApplication,QMainWindow, QAction, qApp, QHBoxLayout, QVBoxLayout,QGridLayout,
+    QLineEdit)
+from PyQt5.QtGui import QFont,QIcon
+from PyQt5.QtCore import QCoreApplication
+
+
+##***CloseWindow***## ##
+class CloseW(QWidget):
+
+   def __init__(self):
+       super(). __init__()
+       self.initUI()
+
+   def initUI(self):
+       qbtn = QPushButton('Quit', self) 
+       # A button is created. A button is an instance of the QPushButton class.
+       # The first argument to the constructor is the text of the label displayed on the button.
+       # The second argument is the parent component.
+       # The parent component is the Example component, which inherits from the QWiget class.
+       
+       # Connect button click to a function
+       qbtn.clicked.connect(QCoreApplication.instance().quit)
+
+       # Resize button
+       qbtn.resize(qbtn.sizeHint())
+
+       # Position button
+       qbtn.move(50, 50)
+
+       # Set window coordinates and title
+       self.setGeometry(300, 100, 200, 100)
+       self.setWindowTitle('exercise')
+
+       self.show()
+
+if __name__ == '__main__':
+   app = QApplication(sys.argv)
+   ex = CloseW()
+   sys.exit(app.exec_())
+```
+
+Click the quit button to exit the program
+
+![](/assets/img/uploads/pyqt-qpushbutton.png)
