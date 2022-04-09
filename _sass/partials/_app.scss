@@ -91,7 +91,7 @@ header > nav {
 // our main content wrapper, the width scales with font size
 main {
   width: 100%;
-  max-width: 52rem;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   grid-column: main;
@@ -108,7 +108,7 @@ main {
 @supports (display: grid) {
   main {
     width: auto;
-    max-width: none;
+    max-width: 100%;
   }
 }
 
