@@ -31,6 +31,7 @@ If you don't care about conflicting packages, you can install like this:
 ```bash
 apt install python3-pyqt5
 ```
+<br />
 
 A basic program in PyQt5
 
@@ -66,14 +67,17 @@ def show_w():
 if __name__ == '__main__':
     show_w()
 ```
-
+<br />
 Run the program and you should see an empty window like this. The size, position and title are all defined in the code above.
+<br />
 
 ![assets/img/uploads/pyqt-window.png](/assets/img/uploads/pyqt-window.png)
 
+<br />
+
 ## Button
 
-Example program: button, window closing, tooltip
+Example program: button, window closing, tooltip. This is a simple example for pyqt *QPushButton*. You can set the buttons text in the constructor *QPushButton(..)*. Then set the tooltip with the first paramater *setToolTip(..)*.
 
 ```python
 import sys
@@ -114,9 +118,13 @@ This program will create a window with a button, on mouseover it will show a lit
 
 ![pyqt button tooltip](/assets/img/uploads/qpushbutton.png)
 
+<br />
+
 ### Button click
 
-The program below closes if you click on the quit button.
+The program below closes if you click on the quit button. The QPushButton class is creates a button and it's a class that uses the QWidget class.
+
+You can connect the button click to a method by calling `.clicked.connect()`. 
 
 ```python
 import sys
@@ -166,6 +174,8 @@ Click the quit button to exit the program
 
 ![](/assets/img/uploads/pyqt-qpushbutton.png)
 
+<br />
+
 ### Messagebox
 
 You can easily show a messagebox with PyQt. The example below shows the message box just before closing the window (not the button).
@@ -214,9 +224,13 @@ if __name__ == '__main__':
    sys.exit(app.exec_())
 ```
 
+<br />
+
 The program shows this messagebox when you close it:
 
 ![QMessagebox python messagebox](/assets/img/uploads/messagebox.png)
+
+<br />
 
 ## Menubar
 
@@ -259,13 +273,17 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 ```
 
+<br />
+
 Running the program shows something like this:
 
 ![pyqt menubar](/assets/img/uploads/pyqt-menubar.png)
 
+<br />
+
 ## Label
 
-QLabel demonstration, put some on the window.
+QLabel demonstration, put some on the window. The QLabel widget can show text. You can move the widget arround by calling *.move()*.
 
 ```python
 import sys
