@@ -3,8 +3,7 @@ layout: post
 title: A Brief Introduction to PyQt
 author: john_doe
 date: 2022-04-08 21:06:30
-intro_paragraph: PyQt is a Python binding of the Qt user interface library,
-  using Qt's C++ API. It supports all major desktop platforms.
+intro_paragraph: PyQt is a Python binding of the Qt user interface library
 ---
 PyQt is a set of Python bindings for The Qt cross-platform GUI toolkit. These bindings allow Python programmers to create GUI applications that run on Windows, MacOS X and Linux.
 
