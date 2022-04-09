@@ -24,6 +24,10 @@ We'll cover getting an environment set up, learning about widgets, and what you 
 
 ### Installation
 
+You should install pyqt5 onto your system inside a virtual environment. You can do that in PyCharm or inside a virtual environment. 
+
+If you don't care about conflicting packages, you can install like this:
+
 ```bash
 apt install python3-pyqt5
 ```
