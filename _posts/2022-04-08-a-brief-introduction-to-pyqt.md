@@ -213,3 +213,86 @@ if __name__ == '__main__':
 The program shows this messagebox when you close it:
 
 ![QMessagebox python messagebox](/assets/img/uploads/messagebox.png)
+
+## Menubar
+
+The program below creates a menu bar on the window. If you click on file exit it will close the program.
+
+```python
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip, QDesktopWidget, QMessageBox,QTextEdit,QLabel,
+    QPushButton, QApplication,QMainWindow, QAction, qApp, QHBoxLayout, QVBoxLayout,QGridLayout,
+    QLineEdit)
+from PyQt5.QtGui import QFont,QIcon
+from PyQt5.QtCore import QCoreApplication
+
+class MenuBar(QMainWindow):
+    def __init__(self):
+        super().__init__()
+ 
+        self.initUI()
+ 
+    def initUI(self):
+        exitAction = QAction(QIcon('icon.jpg'), 'Exit', self)
+        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setStatusTip('Exit application')
+        exitAction.triggered.connect(qApp.quit)
+ 
+        self.statusBar()
+ 
+        menubar = self.menuBar()
+        fileMenu = menubar.addMenu('File')
+        fileMenu.addAction(exitAction)
+ 
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle('Menubar')
+        self.show()
+ 
+ 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MenuBar()
+    sys.exit(app.exec_())
+```
+
+Running the program shows something like this:
+
+![pyqt menubar](/assets/img/uploads/pyqt-menubar.png)
+
+## Label
+
+QLabel demonstration, put some on the window.
+
+```python
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip, QDesktopWidget, QMessageBox,QTextEdit,QLabel,
+    QPushButton, QApplication,QMainWindow, QAction, qApp, QHBoxLayout, QVBoxLayout,QGridLayout,
+    QLineEdit)
+from PyQt5.QtGui import QFont,QIcon
+from PyQt5.QtCore import QCoreApplication
+
+class AbsPosition(QWidget):
+    def __init__(self):
+        super().__init__()
+ 
+        self.initUI()
+ 
+    def initUI(self):
+        lbl1 = QLabel('Coffee', self)
+        lbl1.move(20, 10)
+ 
+        lbl2 = QLabel('Tea', self)
+        lbl2.move(20, 40)
+ 
+        lbl3 = QLabel('Milk', self)
+        lbl3.move(20, 70)
+ 
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Labels')
+        self.show()
+ 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = AbsPosition()
+    sys.exit(app.exec_())
+```
