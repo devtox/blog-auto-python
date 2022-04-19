@@ -13,7 +13,11 @@ The Python Flask framework allows you to focus mainly on your business logic, wi
 
 Python is a high-level, general-purpose programming language. Flask is an open source web application framework written in Python. It’s used to create web application prototypes quickly without the need to hook into a specific database or to write raw SQL queries, but you have the option to do so.
 
-The goal of the project is to empower developers with a simple but flexible structure for application development. Features include, but are not limited to:
+You can easily [Deploy a Python Web App online](https://www.pythonanywhere.com/?affiliate_id=00535ced)
+
+### Why  Flask?
+
+The goal of the Flask project is to empower developers with a simple but flexible structure for application development. Features include, but are not limited to:
 
 * Routing
 * View Templates
@@ -23,6 +27,8 @@ The goal of the project is to empower developers with a simple but flexible stru
 * Extensions  
 
 <br />
+
+You may like: [Create Web Apps with Python Flask](https://pythoncourses.gumroad.com/l/IMzBy)
 
 ### Flask web app
 
@@ -282,4 +288,5 @@ The template contains an if statement, the output depends on the variable passed
 Besides showing variables directly and if statements, you can also use for loops. So that sums up the template language.
 
 There's a lot more to Python Flask, but these are the absolute basics.
-<br />
+<br /><br />
+You may like: [Create Web Apps with Python Flask](https://pythoncourses.gumroad.com/l/IMzBy)
