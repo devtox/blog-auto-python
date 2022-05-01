@@ -10,9 +10,11 @@ Selenium tests run directly in the browser, just like a real user is doing. Supp
 
 Use python crawler to call selenium to simulate a normal user accessing the browser.
 
+![python selenium automation](/assets/img/uploads/selenium.png)
+
 **Installation**
 
-Following is an example of how to install python selenium using python tools such as pip.First, you'll need to install python selenium. You can do this using python tools such as pip. Once you have selenium installed, you need to install the web driver. Then you can begin writing your scripts.
+Following is an example of how to install python selenium using python tools such as pip. First, you'll need to install python selenium. You can do this using python tools such as pip. Once you have selenium installed, you need to install the web driver. Then you can begin writing your scripts.
 
 Install selenium: 
 
@@ -23,15 +25,16 @@ pip install selenium
 # linux: 
 pip3 install selenium
 ```
+
 <br />
-Install [ChromeDriver](https://chromedriver.chromium.org/home), the tool for selenium to use Chrome. By comparing the versions, you can find that each driver version corresponds to Chrome version
+Install \[ChromeDriver](https://chromedriver.chromium.org/home), the tool for selenium to use Chrome. By comparing the versions, you can find that each driver version corresponds to Chrome version
 
 Unzip the downloaded ChromeDriver. Place the extracted files in a suitable location.
 
 windows: Move the extracted files to a folder with environment variables configured, such as python's folder.
 
 linux: Move the extracted files to the `/usr/local/bin` directory.
-    
+
 Done.
 
 ### Selenium example
@@ -43,7 +46,6 @@ This means that we can use python to open a browser to automate access.
 Once you have your script set up, running it will open up a browser window and navigate to the specified webpage. 
 
 Install selenium:
-
 
 ```python
 #! /usr/bin/env python3
@@ -60,6 +62,7 @@ time.sleep(2)
 # After using, remember to close the browser, otherwise the chromedriver.exe process will remain in memory.
 driver.quit() 
 ```
+
 <br />
 You can use any browser you want, as long as you have the web driver installed.
 
@@ -76,8 +79,7 @@ browser=webdriver.PhantomJS()
 
 From there, selenium will be able to interact with the page just as if it were a user. This includes things like clicking links and buttons, filling out form inputs, and so on. Using these interactions, you can then extract the data that you want from the page and save it however you see fit
 
-
-### Driver find a single element
+### Driver find element
 
 You can interact with the elements on the web page.
 
@@ -97,10 +99,11 @@ element.send_keys(u'\ue007') # enter key
 #wd.quit()
 ```
 
+<br />
 There are many ways to select an element:
 
 | Method                              | Function                          |
-|-------------------------------------|-----------------------------------|
+| ----------------------------------- | --------------------------------- |
 | find_element_by_xpath()             | Find by Xpath                     |
 | find_element_by_class_name()        | find by class attribute           |
 | find_element_by_css_selector()      | find element by css selector      |
@@ -110,6 +113,7 @@ There are many ways to select an element:
 | find_element_by_partial_link_text() | find element by partial link text |
 | find_element_by_tag_name()          | find by tag name                  |
 
+<br />
 If an element is not found, an exception can be thrown
 
 ```python
@@ -129,6 +133,7 @@ except NoSuchElementException:
 finally:
     browser.close()
 ```
+
 <br />
 
 ### Selenium headless
@@ -162,6 +167,7 @@ time.sleep(2)
 print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
 driver.quit() 
 ```
+
 <br />
 ### Selenium Driver Operations
 
@@ -177,6 +183,7 @@ page_source  #  Get the source code of the current page after rendering.
 current_url  # Get the url of the current page.
 window_handles # Get the handles of all windows in the current session.
 ```
+
 <br />
 
 ### Selenium show page source
@@ -192,7 +199,9 @@ browser.get("https://news.ycombinator.com")
 print(browser.page_source)
 browser.close()
 ```
+
 <br />
+
 ### Driver cookies
 
 You can add a cookie to the current session.
@@ -209,21 +218,23 @@ driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/'})
 driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/', 'secure':True})
 ```
 
+<br />
 Methods 
 
 ```python
-Gets a single cookie by name, returns None if there is none.
+# Gets a single cookie by name, returns None if there is none.
 get_cookie(name): 
 
-Get all cookies, returns a set of dictionaries.
+# Get all cookies, returns a set of dictionaries.
 get_cookies(): 
 
-Delete all cookies.
+# Delete all cookies.
 delete_all_cookies(): 
 
-Delete the specified cookie by name.
+# Delete the specified cookie by name.
 delete_cookie(name): 
 ```
+
 <br />
 
 ### Selenium wait
@@ -253,7 +264,7 @@ finally:
     driver.quit()
 ```
 
-In this example, instead of using find_element_by_* as such to find an element, we use WebDriverWait.
+In this example, instead of using find*element_by** as such to find an element, we use WebDriverWait.
 
 The meaning of the code in the try block is: wait up to 10 seconds before throwing an exception that the element does not exist. During these 10 seconds, WebDriverWait will run the content of until every 500ms by default, while EC.presence_of_element_located in until checks if the element has been loaded, and the checked element is found by By.ID in this way.
 
@@ -273,4 +284,3 @@ driver.implicitly_wait(10)
 driver.get("http://somedomain/url_that_delays_loading")
 myDynamicElement = driver.find_element_by_id("myDynamicElement")
 ```
-
