@@ -9,6 +9,8 @@ PyQt is a set of Python bindings for The Qt cross-platform GUI toolkit. These bi
 
 PyQt applications look and feel like native, but with all the power of the full Qt library available at their fingertips.
 
+You may like: [Create Desktop Apps with Python PyQt5](https://pythoncourses.gumroad.com/l/pysqtsamples)
+
 **What can you do with PyQt?**
 
 Create sophisticated *graphical user interfaces* with Python. 
@@ -71,6 +73,8 @@ Run the program and you should see an empty window like this. The size, position
 <br />
 
 ![assets/img/uploads/pyqt-window.png](/assets/img/uploads/pyqt-window.png)
+<br />
+You may like: [Create Desktop Apps with Python PyQt5](https://pythoncourses.gumroad.com/l/pysqtsamples)
 
 <br />
 
@@ -321,3 +325,5 @@ if __name__ == '__main__':
 The QLabel widgets are shown below. The text is shown onto the window.
 
 ![qlabel python](/assets/img/uploads/pyqt-qlabel.png)
+
+You may like: [Create Desktop Apps with Python PyQt5](https://pythoncourses.gumroad.com/l/pysqtsamples)
