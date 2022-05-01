@@ -2,7 +2,7 @@
 layout: post
 title: Python Selenium
 author: john_doe
-date: 2022-05-01 10:10:21
+date: 2022-04-30 10:10:21
 ---
 Selenium is a tool for web application testing.
 
