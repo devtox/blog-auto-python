@@ -77,59 +77,7 @@ browser=webdriver.PhantomJS()
 From there, selenium will be able to interact with the page just as if it were a user. This includes things like clicking links and buttons, filling out form inputs, and so on. Using these interactions, you can then extract the data that you want from the page and save it however you see fit
 
 
-### Selenium headless
-
-Chrome running without interface
-
-```python
-#! /usr/bin/env python3
-'''
-    Based on new features released in chrome browser in 2017,
-    requires unix versions of chrome above 57,
-    windows version of chrome is higher than 58,
-    to run without an interface.
-'''
-
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import time
-
-chrome_opt = Options() # Create an argument object.
-chrome_opt.add_argument('--headless') # No interface.
-chrome_opt.add_argument('--disable-gpu') # Combine with disable-gpu above.
-chrome_opt.add_argument('--window-size=1366,768') # Set the window size, the window size will have an effect.
-
-# Create a Chrome object and pass in the settings.
-driver = webdriver.Chrome(chrome_options=chrome_opt) 
-       
-# Manipulate this object.
-driver.get('https://www.youtube.com') # Open youtube.
-time.sleep(2)
-print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
-driver.quit() 
-```
-<br />
-### Selenium Driver Operations
-
-Driver object common operations
-
-* get(url): Access the incoming url address in the current browser session, driver.get('https://www.youtube.com').
-
-* close(): Close the current browser window.
-
-* quit(): Quit the webdriver and close all windows.
-
-* refresh(): Refresh the current page.
-
-* title: Get the title of the current page.
-
-* page_source: Get the source code of the current page after rendering.
-
-* current_url: Get the url of the current page.
-
-* window_handles: Get the handles of all windows in the current session.
-
-### Driver finds a single element
+### Driver find a single element
 
 You can interact with the elements on the web page.
 
@@ -182,6 +130,55 @@ finally:
     browser.close()
 ```
 <br />
+
+### Selenium headless
+
+Chrome running without interface
+
+```python
+#! /usr/bin/env python3
+'''
+    Based on new features released in chrome browser in 2017,
+    requires unix versions of chrome above 57,
+    windows version of chrome is higher than 58,
+    to run without an interface.
+'''
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import time
+
+chrome_opt = Options() # Create an argument object.
+chrome_opt.add_argument('--headless') # No interface.
+chrome_opt.add_argument('--disable-gpu') # Combine with disable-gpu above.
+chrome_opt.add_argument('--window-size=1366,768') # Set the window size, the window size will have an effect.
+
+# Create a Chrome object and pass in the settings.
+driver = webdriver.Chrome(chrome_options=chrome_opt) 
+       
+# Manipulate this object.
+driver.get('https://www.youtube.com') # Open youtube.
+time.sleep(2)
+print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
+driver.quit() 
+```
+<br />
+### Selenium Driver Operations
+
+Driver object common operations
+
+```python
+get(url)  # Access the incoming url address in the current browser session, driver.get('https://www.youtube.com').
+close()   # Close the current browser window.
+quit()    # Quit the webdriver and close all windows.
+refresh() # Refresh the current page.
+title  # Get the title of the current page.
+page_source  #  Get the source code of the current page after rendering.
+current_url  # Get the url of the current page.
+window_handles # Get the handles of all windows in the current session.
+```
+<br />
+
 ### Selenium show page source
 
 The program below starts a web browser, opens a url and then shows html page source.
