@@ -77,7 +77,7 @@ browser=webdriver.PhantomJS()
 From there, selenium will be able to interact with the page just as if it were a user. This includes things like clicking links and buttons, filling out form inputs, and so on. Using these interactions, you can then extract the data that you want from the page and save it however you see fit
 
 
-### Driver find a single element
+### Driver find element
 
 You can interact with the elements on the web page.
 
@@ -96,7 +96,7 @@ element.send_keys(u'\ue007') # enter key
 
 #wd.quit()
 ```
-
+<br />
 There are many ways to select an element:
 
 | Method                              | Function                          |
@@ -109,7 +109,7 @@ There are many ways to select an element:
 | find_element_by_name()              | find by unique name               |
 | find_element_by_partial_link_text() | find element by partial link text |
 | find_element_by_tag_name()          | find by tag name                  |
-
+<br />
 If an element is not found, an exception can be thrown
 
 ```python
@@ -196,7 +196,6 @@ browser.close()
 ### Driver cookies
 
 You can add a cookie to the current session.
-
 ```python
 add_cookie(cookie_dict) : 
 ```
@@ -208,20 +207,20 @@ driver.add_cookie({'name' : 'foo', 'value' : 'bar '})
 driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/'})
 driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/', 'secure':True})
 ```
-
+<br />
 Methods 
 
 ```python
-Gets a single cookie by name, returns None if there is none.
+# Gets a single cookie by name, returns None if there is none.
 get_cookie(name): 
 
-Get all cookies, returns a set of dictionaries.
+# Get all cookies, returns a set of dictionaries.
 get_cookies(): 
 
-Delete all cookies.
+# Delete all cookies.
 delete_all_cookies(): 
 
-Delete the specified cookie by name.
+# Delete the specified cookie by name.
 delete_cookie(name): 
 ```
 <br />
