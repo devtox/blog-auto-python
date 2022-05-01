@@ -17,17 +17,20 @@ Following is an example of how to install python selenium using python tools suc
 Install selenium: 
 
 ```
-windows: pip install selenium
-linux: pip3 install selenium
-```
+# windows: 
+pip install selenium
 
+# linux: 
+pip3 install selenium
+```
+<br />
 Install [ChromeDriver](https://chromedriver.chromium.org/home), the tool for selenium to use Chrome. By comparing the versions, you can find that each driver version corresponds to Chrome version
 
 Unzip the downloaded ChromeDriver. Place the extracted files in a suitable location.
 
 windows: Move the extracted files to a folder with environment variables configured, such as python's folder.
 
-linux: Move the extracted files to the /usr/local/bin directory.
+linux: Move the extracted files to the `/usr/local/bin` directory.
     
 Done.
 
@@ -57,7 +60,7 @@ time.sleep(2)
 # After using, remember to close the browser, otherwise the chromedriver.exe process will remain in memory.
 driver.quit() 
 ```
-
+<br />
 You can use any browser you want, as long as you have the web driver installed.
 
 ```python
@@ -105,7 +108,7 @@ time.sleep(2)
 print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
 driver.quit() 
 ```
-
+<br />
 ### Selenium Driver Operations
 
 Driver object common operations
@@ -178,7 +181,7 @@ except NoSuchElementException:
 finally:
     browser.close()
 ```
-
+<br />
 ### Selenium show page source
 
 The program below starts a web browser, opens a url and then shows html page source.
@@ -192,7 +195,7 @@ browser.get("https://news.ycombinator.com")
 print(browser.page_source)
 browser.close()
 ```
-
+<br />
 ### Driver cookies
 
 You can add a cookie to the current session.
@@ -224,6 +227,7 @@ delete_all_cookies():
 Delete the specified cookie by name.
 delete_cookie(name): 
 ```
+<br />
 
 ### Selenium wait
 
