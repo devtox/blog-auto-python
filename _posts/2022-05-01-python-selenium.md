@@ -82,3 +82,89 @@ time.sleep(2)
 print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
 driver.quit() 
 ```
+
+## Selenium Driver Operations
+
+Driver object common operations
+
+* get(url): Access the incoming url address in the current browser session, driver.get('https://www.youtube.com').
+
+* close(): Close the current browser window.
+
+* quit(): Quit the webdriver and close all windows.
+
+* refresh(): Refresh the current page.
+
+* title: Get the title of the current page.
+
+* page_source: Get the source code of the current page after rendering.
+
+* current_url: Get the url of the current page.
+
+* window_handles: Get the handles of all windows in the current session.
+
+## Driver finds a single element
+
+You can interact with the elements on the web page.
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+#from selenium.webdriver.chrome.service import Service
+
+#wd=webdriver.Chrome())
+wd=webdriver.Firefox()
+wd.get('https://www.bing.com')
+
+element=wd.find_element_by_id('sb_form_q')  # find input by unique id
+element.send_keys('cats')
+element.send_keys(u'\ue007') # enter key
+
+#wd.quit()
+```
+
+There are many ways to select an element:
+
+| Method                              | Function                          |
+|-------------------------------------|-----------------------------------|
+| find_element_by_xpath()             | Find by Xpath                     |
+| find_element_by_class_name()        | find by class attribute           |
+| find_element_by_css_selector()      | find element by css selector      |
+| find_element_by_id()                | find by id                        |
+| find_element_by_link_text()         | find using ahref link text        |
+| find_element_by_name()              | find by unique name               |
+| find_element_by_partial_link_text() | find element by partial link text |
+| find_element_by_tag_name()          | find by tag name                  |
+
+
+## Driver cookies
+
+You can add a cookie to the current session.
+
+```python
+add_cookie(cookie_dict) : 
+```
+
+cookie_dict: A dictionary object, must have "name" and "value" keys, optional keys are: "path", "domain", "secure", "expiry".
+
+```python
+driver.add_cookie({'name' : 'foo', 'value' : 'bar '})
+driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/'})
+driver.add_cookie({'name' : 'foo', 'value' : 'bar ', 'path' : '/', 'secure':True})
+```
+
+Methods 
+
+```python
+Gets a single cookie by name, returns None if there is none.
+get_cookie(name): 
+
+Get all cookies, returns a set of dictionaries.
+get_cookies(): 
+
+Delete all cookies.
+delete_all_cookies(): 
+
+Delete the specified cookie by name.
+delete_cookie(name): 
+```
