@@ -12,6 +12,8 @@ Use python crawler to call selenium to simulate a normal user accessing the brow
 
 ![python selenium automation](/assets/img/uploads/selenium.png)
 
+You may like: [Python Selenium Course](https://pythoncourses.gumroad.com/l/GjuJxo)
+
 **Installation**
 
 Following is an example of how to install python selenium using python tools such as pip. First, you'll need to install python selenium. You can do this using python tools such as pip. Once you have selenium installed, you need to install the web driver. Then you can begin writing your scripts.
@@ -78,6 +80,9 @@ browser=webdriver.PhantomJS()
 ```
 
 From there, selenium will be able to interact with the page just as if it were a user. This includes things like clicking links and buttons, filling out form inputs, and so on. Using these interactions, you can then extract the data that you want from the page and save it however you see fit
+
+You may like: [Python Selenium Course](https://pythoncourses.gumroad.com/l/GjuJxo)
+
 
 ### Driver find element
 
@@ -284,3 +289,5 @@ driver.implicitly_wait(10)
 driver.get("http://somedomain/url_that_delays_loading")
 myDynamicElement = driver.find_element_by_id("myDynamicElement")
 ```
+
+You may like: [Python Selenium Course](https://pythoncourses.gumroad.com/l/GjuJxo)
