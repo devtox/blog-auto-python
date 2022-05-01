@@ -14,8 +14,6 @@ Use python crawler to call selenium to simulate a normal user accessing the brow
 
 Following is an example of how to install python selenium using python tools such as pip.First, you'll need to install python selenium. You can do this using python tools such as pip. Once you have selenium installed, you need to install the web driver. Then you can begin writing your scripts.
 
-Assuming you're familiar with the basics of writing a script in python, we'll move on to how to use selenium. Selenium is generally used for automating web applications for testing purposes. However, it can also be used for web scraping. In order to use selenium for web scraping, you'll need to write a script that opens up a web browser and navigates to the page or pages that you want to scrape.
-
 Install selenium: 
 
 ```
