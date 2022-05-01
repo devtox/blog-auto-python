@@ -51,6 +51,19 @@ time.sleep(2)
 driver.quit() 
 ```
 
+You can use any browser you want, as long as you have the web driver installed.
+
+```python
+# -*- coding: utf-8 -*-
+from selenium import webdriver
+
+browser=webdriver.Chrome()
+browser=webdriver.Firefox()
+browser=webdriver.Safari()
+browser=webdriver.Edge()
+browser=webdriver.PhantomJS()
+```
+
 ## Selenium headless
 
 Chrome running without interface
@@ -136,6 +149,39 @@ There are many ways to select an element:
 | find_element_by_partial_link_text() | find element by partial link text |
 | find_element_by_tag_name()          | find by tag name                  |
 
+If an element is not found, an exception can be thrown
+
+```python
+# -*- coding: utf-8 -*-
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException,NoSuchElementException
+
+browser=webdriver.Chrome()
+try:
+    browser.get("https://www.youtube.com")
+except TimeoutException:
+    print("Time out")
+try:
+    browser.find_element_by_id("hello")
+except NoSuchElementException:
+    print("No Element")
+finally:
+    browser.close()
+```
+
+## Selenium show page source
+
+The program below starts a web browser, opens a url and then shows html page source.
+
+```python
+#_*_coding: utf-8_*_
+
+from selenium import webdriver
+browser=webdriver.Chrome()
+browser.get("https://news.ycombinator.com")
+print(browser.page_source)
+browser.close()
+```
 
 ## Driver cookies
 
@@ -168,3 +214,52 @@ delete_all_cookies():
 Delete the specified cookie by name.
 delete_cookie(name): 
 ```
+
+## Selenium wait
+
+### Explicit waiting
+
+In the process of selenium operating the browser, each time a url is requested, selenium will wait for the page to be loaded before giving the operation permission to our application again.
+
+However, due to the asynchronous loading problem of ajax and various JS codes, we often encounter an error report when using selenium before the operation element is loaded. To solve this problem, Selenium provides several methods of waiting so that we can wait for the element to be loaded and then perform the operation.
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+driver = webdriver.Chrome()
+driver.get("http://somedomain/url_that_delays_loading")
+
+try:
+    # wait
+    element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "myDynamicElement"))
+    )
+
+finally:
+    driver.quit()
+```
+
+In this example, instead of using find_element_by_* as such to find an element, we use WebDriverWait.
+
+The meaning of the code in the try block is: wait up to 10 seconds before throwing an exception that the element does not exist. During these 10 seconds, WebDriverWait will run the content of until every 500ms by default, while EC.presence_of_element_located in until checks if the element has been loaded, and the checked element is found by By.ID in this way.
+
+That is, within 10 seconds, the default is to check every 0.5 seconds if the element exists and assign the element to the variable element if it exists. If the element still does not exist after 10 seconds, a timeout exception is thrown.
+
+### Implicit Waiting.
+
+Implicit wait means that when a find_element operation is performed in the webdriver, if the element is not found, it will be polled for a period of time by default.
+
+This value defaults to 0 and can be set as follows.
+
+```python
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.implicitly_wait(10) 
+driver.get("http://somedomain/url_that_delays_loading")
+myDynamicElement = driver.find_element_by_id("myDynamicElement")
+```
+
