@@ -29,7 +29,7 @@ linux: Move the extracted files to the /usr/local/bin directory.
     
 Done.
 
-## Selenium example
+### Selenium example
 
 As mentioned above, we can use python to import selenium to control the browser for any site.
 
@@ -63,8 +63,8 @@ browser=webdriver.Safari()
 browser=webdriver.Edge()
 browser=webdriver.PhantomJS()
 ```
-
-## Selenium headless
+<br />
+### Selenium headless
 
 Chrome running without interface
 
@@ -95,8 +95,8 @@ time.sleep(2)
 print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
 driver.quit() 
 ```
-
-## Selenium Driver Operations
+<br />
+### Selenium Driver Operations
 
 Driver object common operations
 
@@ -168,8 +168,8 @@ except NoSuchElementException:
 finally:
     browser.close()
 ```
-
-## Selenium show page source
+<br />
+### Selenium show page source
 
 The program below starts a web browser, opens a url and then shows html page source.
 
@@ -182,8 +182,8 @@ browser.get("https://news.ycombinator.com")
 print(browser.page_source)
 browser.close()
 ```
-
-## Driver cookies
+<br />
+### Driver cookies
 
 You can add a cookie to the current session.
 
@@ -214,10 +214,10 @@ delete_all_cookies():
 Delete the specified cookie by name.
 delete_cookie(name): 
 ```
+<br />
+### Selenium wait
 
-## Selenium wait
-
-### Explicit waiting
+#### Explicit waiting
 
 In the process of selenium operating the browser, each time a url is requested, selenium will wait for the page to be loaded before giving the operation permission to our application again.
 
@@ -248,7 +248,7 @@ The meaning of the code in the try block is: wait up to 10 seconds before throwi
 
 That is, within 10 seconds, the default is to check every 0.5 seconds if the element exists and assign the element to the variable element if it exists. If the element still does not exist after 10 seconds, a timeout exception is thrown.
 
-### Implicit Waiting.
+#### Implicit Waiting.
 
 Implicit wait means that when a find_element operation is performed in the webdriver, if the element is not found, it will be polled for a period of time by default.
 
