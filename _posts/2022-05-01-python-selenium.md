@@ -12,7 +12,11 @@ Use python crawler to call selenium to simulate a normal user accessing the brow
 
 **Installation**
 
-Install selenium:
+Following is an example of how to install python selenium using python tools such as pip.First, you'll need to install python selenium. You can do this using python tools such as pip. Once you have selenium installed, you need to install the web driver. Then you can begin writing your scripts.
+
+Assuming you're familiar with the basics of writing a script in python, we'll move on to how to use selenium. Selenium is generally used for automating web applications for testing purposes. However, it can also be used for web scraping. In order to use selenium for web scraping, you'll need to write a script that opens up a web browser and navigates to the page or pages that you want to scrape.
+
+Install selenium: 
 
 ```
 windows: pip install selenium
@@ -34,6 +38,11 @@ Done.
 As mentioned above, we can use python to import selenium to control the browser for any site.
 
 This means that we can use python to open a browser to automate access.
+
+Once you have your script set up, running it will open up a browser window and navigate to the specified webpage. 
+
+Install selenium:
+
 
 ```python
 #! /usr/bin/env python3
@@ -63,7 +72,10 @@ browser=webdriver.Safari()
 browser=webdriver.Edge()
 browser=webdriver.PhantomJS()
 ```
-<br />
+
+From there, selenium will be able to interact with the page just as if it were a user. This includes things like clicking links and buttons, filling out form inputs, and so on. Using these interactions, you can then extract the data that you want from the page and save it however you see fit
+
+
 ### Selenium headless
 
 Chrome running without interface
@@ -95,7 +107,7 @@ time.sleep(2)
 print(driver.page_source) # Print the loaded page code, proving that the (prove) program is right.
 driver.quit() 
 ```
-<br />
+
 ### Selenium Driver Operations
 
 Driver object common operations
@@ -116,7 +128,7 @@ Driver object common operations
 
 * window_handles: Get the handles of all windows in the current session.
 
-## Driver finds a single element
+### Driver finds a single element
 
 You can interact with the elements on the web page.
 
@@ -168,7 +180,7 @@ except NoSuchElementException:
 finally:
     browser.close()
 ```
-<br />
+
 ### Selenium show page source
 
 The program below starts a web browser, opens a url and then shows html page source.
@@ -182,7 +194,7 @@ browser.get("https://news.ycombinator.com")
 print(browser.page_source)
 browser.close()
 ```
-<br />
+
 ### Driver cookies
 
 You can add a cookie to the current session.
@@ -214,7 +226,7 @@ delete_all_cookies():
 Delete the specified cookie by name.
 delete_cookie(name): 
 ```
-<br />
+
 ### Selenium wait
 
 #### Explicit waiting
